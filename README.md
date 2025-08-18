@@ -1,8 +1,5 @@
 # Build_Regression_Models_From_Scratch
 
-import pypandoc
-
-# Content for README.md with explanation, formulas, and placeholders for images
 readme_content = """
 # 📈 Linear Regression from Scratch (Python + NumPy)
 
