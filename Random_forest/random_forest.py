@@ -130,10 +130,9 @@ class RandomForest:
             final.append(Counter(row).most_common(1)[0][0])
         return final
 
-
-
 # Load iris dataset
 iris = load_iris()
+
 X, y = iris.data.tolist(), iris.target.tolist()
 
 # Train-test split
@@ -149,3 +148,4 @@ y_pred = rf.predict(X_test)
 # Accuracy
 accuracy = sum(1 for i in range(len(y_test)) if y_test[i] == y_pred[i]) / len(y_test)
 print("Random Forest Accuracy:", accuracy)
+
