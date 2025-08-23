@@ -129,3 +129,23 @@ class RandomForest:
         for row in predictions:
             final.append(Counter(row).most_common(1)[0][0])
         return final
+
+# Load iris dataset
+iris = load_iris()
+
+X, y = iris.data.tolist(), iris.target.tolist()
+
+# Train-test split
+X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.3, random_state=42)
+
+# Train Random Forest
+rf = RandomForest(n_trees=10, max_depth=5, n_features=2)
+rf.fit(X_train, y_train)
+
+# Predictions
+y_pred = rf.predict(X_test)
+
+# Accuracy
+accuracy = sum(1 for i in range(len(y_test)) if y_test[i] == y_pred[i]) / len(y_test)
+print("Random Forest Accuracy:", accuracy)
+
